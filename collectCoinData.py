@@ -10,21 +10,56 @@ api_key = setup.api_key
 
 
 ###############################################################################
+#                             getMarketData():                                #
+#   Takes three inputs:                                                       #
+#       api_key - Key needed to gain access to API see README.md              #
+#       query_url -                                                           #
+#         https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest   #
+#   One output:                                                               #
+#       data: Returns a list of coins and their stats                         #
+#   How to Run:                                                               #
+#       marketData = getMarketData(api_key, url)                              #
+#       print(marketData)                                                     #
+###############################################################################
+def getMarketData(key, query_url):
+    data = None
+    url = query_url
+    parameters = {
+        'convert': 'USD',
+    }
+    headers = {
+        'Accepts': 'application/json',
+        'X-CMC_PRO_API_KEY': key,
+    }
+
+    session = Session()
+    session.headers.update(headers)
+
+    try:
+        response = session.get(url, params=parameters)
+        data = json.loads(response.text)
+    except (ConnectionError, Timeout, TooManyRedirects) as e:
+        print(e)
+    return data
+
+
+###############################################################################
 #                             getLatestCoinData():                            #
 #   Takes three inputs:                                                       #
 #       api_key - Key needed to gain access to API see README.md              #
-#       query_url -  Address that is being quiried                            #
+#       query_url -  Address that is being queried                            #
 #       limit - Number of coins data is being returned about                  #
+#       converion - Currency you want coin data returned in                   #
 #   One output:                                                               #
 #       data: Returns a list of coins and their stats                         #
 ###############################################################################
-def getLatestCoinData(key, query_url, limit):
+def getLatestCoinData(key, query_url, limit, converion):
     data = None
     url = query_url
     parameters = {
         'start': '1',
         'limit': limit,
-        'convert': 'USD',
+        'convert': conversion,
     }
     headers = {
         'Accepts': 'application/json',
@@ -67,9 +102,10 @@ def main():
                  328, 1720, 131, 1518, 1376, 1321, 873]
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     coinCount = '100'
-    coinData = getLatestCoinData(api_key, url, coinCount)
+    sortedCoinData = []
+    converion = 'USD'
+    coinData = getLatestCoinData(api_key, url, coinCount, converion)
     sortedCoinData = sortCoinData(coinData, caredList)
-    
     return sortCoinData
     
 if __name__ == "__main__":
