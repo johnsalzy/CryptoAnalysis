@@ -5,7 +5,7 @@
 2. Clone Project
 3. Install Virtualenv and activate
 4. Install the required packages (pip install -r requirements.txt)
-5. With the setup key obtained in step 1 update the API_KEY in the .env file
+5. With the setup key obtained in step 1 create a .env file and add key
 ```
 API_KEY=09dsadaf2-9d31-412d-45b4-eadsf0bbd19
 ```
