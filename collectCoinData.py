@@ -11,6 +11,7 @@ api_key = setup.api_key
 
 ###############################################################################
 #                             getMarketData():                                #
+###############################################################################
 #   Takes three inputs:                                                       #
 #       api_key - Key needed to gain access to API see README.md              #
 #       query_url -                                                           #
@@ -45,6 +46,7 @@ def getMarketData(key, query_url):
 
 ###############################################################################
 #                             getLatestCoinData():                            #
+###############################################################################
 #   Takes three inputs:                                                       #
 #       api_key - Key needed to gain access to API see README.md              #
 #       query_url -  Address that is being queried                            #
@@ -53,7 +55,7 @@ def getMarketData(key, query_url):
 #   One output:                                                               #
 #       data: Returns a list of coins and their stats                         #
 ###############################################################################
-def getLatestCoinData(key, query_url, limit, converion):
+def getLatestCoinData(key, query_url, limit, conversion):
     data = None
     url = query_url
     parameters = {
@@ -79,15 +81,15 @@ def getLatestCoinData(key, query_url, limit, converion):
 
 ###############################################################################
 #                             sortCoinData():                                 #
+###############################################################################
 #   Takes two inputs:                                                         #
 #       coinData - Data obtained from getLatestCoinData()                     #
 #       caredList - A list of coins we want the stats about                   #
 #   One output:                                                               #
-#       Returns a list of cared about coins and their stats                   #
+#       sortedCoinData - Returns a list of cared about coins and their stats  #
 ###############################################################################
 def sortCoinData(coinData, caredList):
     sortedCoinData = []
-    print(coinData['status'], '\n')
     for coin in coinData['data']:
         if coin['id'] in caredList:
             sortedCoinData.append(coin)
@@ -103,8 +105,8 @@ def main():
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     coinCount = '100'
     sortedCoinData = []
-    converion = 'USD'
-    coinData = getLatestCoinData(api_key, url, coinCount, converion)
+    conversion = 'USD'
+    coinData = getLatestCoinData(api_key, url, coinCount, conversion)
     sortedCoinData = sortCoinData(coinData, caredList)
     return sortCoinData
     
