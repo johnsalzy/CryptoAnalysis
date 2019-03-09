@@ -100,7 +100,7 @@ def main():
     #caredList = [Bitcoin, Ethereum, XRP, Litecoin, EOS, Bitcoin Cash, Binance,
     #             Tether, Stellar, TRON, Bitcoin SV, Cardano, Monero, IOTA, 
     #             DASH, Maker, NEO, Ethereum Classic, NEM]
-    caredList = [1, 1027, 52, 2, 1756, 1831, 1839, 825, 512, 1958, 3602, 2010,
+    caredList = [1, 1027, 52, 2, 1765, 1831, 1839, 825, 512, 1958, 3602, 2010,
                  328, 1720, 131, 1518, 1376, 1321, 873]
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     coinCount = '100'
@@ -108,7 +108,7 @@ def main():
     conversion = 'USD'
     coinData = getLatestCoinData(api_key, url, coinCount, conversion)
     sortedCoinData = sortCoinData(coinData, caredList)
-    return sortCoinData
+    return sortedCoinData, conversion
     
 if __name__ == "__main__":
     main()
