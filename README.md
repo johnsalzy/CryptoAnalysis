@@ -23,8 +23,8 @@ If you just want to install packages...
 pip install -r requirements.txt
 ```
 This is optional, using virtualenv to isolate your development enviorment.
-If you would like to skip this just install the packages in requirements.txt
-See [Documentation](https://virtualenv.pypa.io/en/latest/) 
+If you would like to skip this just install the packages in requirements.txt <br/>
+See [Documentation](https://virtualenv.pypa.io/en/latest/) <br />
 In your command prompt in root project folder...
 ```
 pip install virtualenv
