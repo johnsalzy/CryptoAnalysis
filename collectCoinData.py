@@ -46,7 +46,7 @@ def getMarketData(key, query_url):
 
 ###############################################################################
 #                             getLatestCoinData():                            #
-###############################################################################
+#-----------------------------------------------------------------------------#
 #   Takes three inputs:                                                       #
 #       api_key - Key needed to gain access to API see README.md              #
 #       query_url -  Address that is being queried                            #
