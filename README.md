@@ -5,17 +5,16 @@
 
 
 ## Project Setup
-----------------
 1. Clone Project
 2. First Set Up Account through [coinmarketcap](https://coinmarketcap.com/api/documentation/v1/#section/Introduction) to get API key
 3. With the setup key obtained in step 1 of setup create a .env file and add key to it
 ```
 API_KEY=09dsadaf2-9d31-412d-45b4-eadsf0bbd19
 ```
-4. Installing Necessary Packages <br />
+4. Installing Necessary Project Packages <br />
 Optional: **[Installing and Using Virtualenv](#installing-and-using-virtualenv)**
 5. Setup Database to store history **[Database Setup](#database-setup)**
-6. Run test.py in your chosen shell to ensure that it works
+6. Run test.py in your chosen shell to ensure setup was successful
 
 ### Installing and Using Virtualenv
 -----------------------------------
@@ -48,7 +47,7 @@ This project utilizes a Neo4j Database Hosted through [GrapheneDB](https://www.g
 ```
 GRAPHENE_HOST=https://hobby-fldasjflsadjfdasfasdfdd.dbs.graphenedb.com:24780/db/data/cypher
 GRAPHENE_BOLT=bolt://hobby-fldasjflsadjfdasfasdfdd.dbs.graphenedb.com:24786
-GRAPHENE_USER=userNameFromCreateUser
+GRAPHENE_USER=userNameFromCreatedUser
 GRAPHENE_PASS=passwordFromCreatedUser
 ```
 Host and Bolt are under the Connection Tab
