@@ -7,8 +7,8 @@
 ## Project Setup
 ----------------
 1. Clone Project
-2. First Set Up Account through coinmarketcap to get API key https://coinmarketcap.com/api/documentation/v1/#section/Introduction
-3. Installing Necessary Packages 
+2. First Set Up Account through [coinmarketcap](https://coinmarketcap.com/api/documentation/v1/#section/Introduction) to get API key
+3. Installing Necessary Packages <br />
 Optional: **[Installing and Using Virtualenv](#installing-and-using-virtualenv)**
 4. With the setup key obtained in step 1 of setup create a .env file and add key to it
 ```
