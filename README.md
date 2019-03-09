@@ -1,7 +1,7 @@
 # CryptoAnalysis Project
 
 ### Table of Contents
-**[Project Setup](project-setup)**<br>
+**[Project Setup](#project-setup)**<br>
 
 
 ## Project Setup 
