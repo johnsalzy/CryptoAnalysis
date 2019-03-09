@@ -8,20 +8,14 @@
 ----------------
 1. Clone Project
 2. First Set Up Account through [coinmarketcap](https://coinmarketcap.com/api/documentation/v1/#section/Introduction) to get API key
-3. Installing Necessary Packages <br />
-Optional: **[Installing and Using Virtualenv](#installing-and-using-virtualenv)**
-4. With the setup key obtained in step 1 of setup create a .env file and add key to it
+3. With the setup key obtained in step 1 of setup create a .env file and add key to it
 ```
 API_KEY=09dsadaf2-9d31-412d-45b4-eadsf0bbd19
 ```
-5. Run test.py in your chosen shell to ensure that it works
-
-
-
-
-
-
-
+4. Installing Necessary Packages <br />
+Optional: **[Installing and Using Virtualenv](#installing-and-using-virtualenv)**
+5. Setup Database to store history **[Database Setup](#database-setup)**
+6. Run test.py in your chosen shell to ensure that it works
 
 ### Installing and Using Virtualenv
 -----------------------------------
@@ -43,3 +37,18 @@ cd..
 cd..
 pip install -r requirements.txt
 ```
+
+### Database Setup
+------------------
+This project utilizes a Neo4j Database Hosted through [GrapheneDB](https://www.graphenedb.com/)
+1. Create an account
+2. Create a graph
+3. Create a user for the graph
+4. Using the info from above steps add the following to you .env file
+```
+GRAPHENE_HOST=https://hobby-fldasjflsadjfdasfasdfdd.dbs.graphenedb.com:24780/db/data/cypher
+GRAPHENE_BOLT=bolt://hobby-fldasjflsadjfdasfasdfdd.dbs.graphenedb.com:24786
+GRAPHENE_USER=userNameFromCreateUser
+GRAPHENE_PASS=passwordFromCreatedUser
+```
+Host and Bolt are under the Connection Tab
